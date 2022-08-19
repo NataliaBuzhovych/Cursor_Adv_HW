@@ -14,7 +14,7 @@ let sumAllproducts = '';
 if (Math.floor(sum) % 2 == 0){
    sumAllproducts = 'Парне число';
 } else {
-   sumAllproducts = 'Непарне число';
+   sumAllproducts = 'Непарне ';
 }
 
 let answer = `
