@@ -1,4 +1,4 @@
-function isInteger(x) {
+function Integer(x) {
     let num = prompt(x,);
     while(!(Number(num) % 1 == 0)) {
         alert("Ви ввели не ціле число.");
@@ -20,8 +20,8 @@ debugger;
 let minNumber;
 let maxNumber;
 do {
-    minNumber = isInteger("Введіть ціле число M, з якого починається сумування");
-    maxNumber = isInteger("Введіть ціле число N, яким закінчується сумування");
+    minNumber = Integer("Введіть ціле число M, з якого починається сумування");
+    maxNumber = Integer("Введіть ціле число N, яким закінчується сумування");
 } while (!isCorrect(minNumber, maxNumber));
 let sumOddnNumbers = 0;
 let sumAllNumbers = 0;
