@@ -1,42 +1,34 @@
-function Integer(x) {
-    let num = prompt(x,);
-    while(!(Number(num) % 1 == 0)) {
-        alert("Ви ввели не ціле число.");
-        num = prompt(x,);
-    } 
-    return  Number(num);
+
+let minNumber = Number(prompt("Введіть ціле додатнє число M, з якого починається сумування",));
+while (!(minNumber % 1 == 0) || (minNumber == "") || (minNumber < 0)) {
+    alert("Ви ввели число, яке не задовільняє умову");
+    minNumber = +prompt("Введіть ціле додатнє число M, з якого починається сумування",);
+}
+let maxNumber = +prompt("Введіть ціле додатнє число N, яким закінчується сумування",);
+while (!(maxNumber % 1 == 0) || (maxNumber == "") || (maxNumber < 0)) {
+    alert("Ви ввели число, яке не задовільняє умову");
+    maxNumber = +prompt("Введіть ціле додатнє число N, яким закінчується сумування",);
+  
+}
+while (minNumber > maxNumber) {
+    alert('Не можливо зсдійснити сумування. Перше число має бути меншим ніж друге число.');
+    minNumber = +prompt("Введіть ціле додатнє число M, з якого починається сумування",);
+    maxNumber = +prompt("Введіть ціле додатнє число N, яким закінчується сумування",);  
 }
 
-function isCorrect(minNumber, maxNumber) {
-    let check = minNumber < maxNumber;
-    if (!check) {
-        alert('Не можливо зсдійснити сумування');
-    }
-    return check;
-}
-
-debugger;
-
-let minNumber;
-let maxNumber;
-do {
-    minNumber = Integer("Введіть ціле число M, з якого починається сумування");
-    maxNumber = Integer("Введіть ціле число N, яким закінчується сумування");
-} while (!isCorrect(minNumber, maxNumber));
-let sumOddnNumbers = 0;
-let sumAllNumbers = 0;
+let sumNumbers = 0;
 
 if (confirm('Чи потрібно пропускати парні числа?')) {
     for (let i = minNumber; i <= maxNumber; i++) {
     if (!(i % 2 == 0)) {
-        sumOddnNumbers += i;
+        sumNumbers += i;
     }
     }
-    console.log(sumOddnNumbers);
 } else {
        for (let i = minNumber; i <= maxNumber; i++) {
-        sumAllNumbers += i;
+        sumNumbers += i;
     }
-    console.log(sumAllNumbers);
-};
+}; 
+document.writeln(`Сума всіх цифр становить: ${sumNumbers}`);
+
 
