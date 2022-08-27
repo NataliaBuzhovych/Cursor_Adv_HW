@@ -59,3 +59,11 @@ console.log(`Чи є слово "Анна"  паліндромом - ${isPalyndr
 
 
 
+document.writeln(`1. Найбільша цифра у числі 125348895632 становить: ${getMaxDigit(125348895632)};<br>`);
+document.writeln(`2. Число 3 у 4 степені становить ${power(3, 4)};<br>`);
+document.writeln(`3. Слово "уКРАЇНА" з великої букви - ${firtUppercaseWord('уКРАЇНА')};<br>`);
+document.writeln(`4. Заробітня оплата 1000 після податку 19,5% становить ${getTax(1000, 19.5)};<br>`);
+document.writeln(`5. Рандомне число в діапазоні від 10 до 45 виходить ${getRandomNumber(10, 45)};<br>`);
+document.writeln(`6. Буква "с" появляється в слові "Міссісіпі" - ${countLetter('Міссісіпі', 'с')};<br>`);
+document.writeln(`7. Чи є слово "Анна"  паліндромом - ${isPalyndrom('anna')};<br>`);
+
