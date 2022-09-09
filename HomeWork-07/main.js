@@ -4,21 +4,21 @@ const latvia = { tax: 0.25, middleSalary: 1586, vacancies: 3921 };
 
 const litva = { tax: 0.15, middleSalary: 1509, vacancies: 1114 };
 
-// function getMyTaxes(salary) {
-//   return salary - this.tax * salary;
-// }
-// console.log(getMyTaxes.call(ukraine, 1000));
+function getMyTaxes(salary) {
+  return salary - this.tax * salary;
+}
+console.log(getMyTaxes.call(ukraine, 1000));
 
-// function getMiddleTaxes() {
-//   return this.tax * this.middleSalary;
-// }
+function getMiddleTaxes() {
+  return this.tax * this.middleSalary;
+}
 
-// console.log(getMiddleTaxes.call(ukraine));
+console.log(getMiddleTaxes.call(ukraine));
 
-// function getTotalTaxes() {
-//   return this.tax * this.middleSalary * this.vacancies;
-// }
-// console.log(getTotalTaxes.call(litva));
+function getTotalTaxes() {
+  return this.tax * this.middleSalary * this.vacancies;
+}
+console.log(getTotalTaxes.call(litva));
 
 function getMySalary() {
   const salary = Math.floor(Math.random() * 500) + 1500;
@@ -31,4 +31,4 @@ function getMySalary() {
   };
   console.log(mySalary);
 }
-let interval = setInterval(() => getMySalary.call(ukraine), 10000);
+let interval = setInterval(() => getMySalary.call(latvia), 10000);
