@@ -7,35 +7,23 @@ function getRandomArray(length, min, max) {
 }
 console.log(getRandomArray(4, 10, 20));
 
-function getModa(...numbers) {
-  let arrayInteger = numbers.filter((el) => {
-    if (el % 1 == 0) {
-      return el;
-    }
-  });
-}
+// function getModa(...numbers) {
+//   let arrayInteger = numbers.filter((el) => {
+//     if (el % 1 == 0) {
+//       return el;
+//     }
+//   });
+// }
 
 function getAverage(...numbers) {
-  let arrayInteger = numbers.filter((el) => {
-    if (el % 1 == 0) {
-      return el;
-    }
-  });
-  let sum = 0;
-  arrayInteger.forEach((el) => {
-    sum += el;
-  });
-  return sum / arrayInteger.length;
+  let arrayInteger = numbers.filter((el) => el % 1 == 0);
+  return arrayInteger.reduce((acc, e) => acc + e) / arrayInteger.length;
 }
 console.log(getAverage(2, 4.5, 6, 7, 5.5, 5));
 
 function getMedian(...numbers) {
   let arrayInteger = numbers
-    .filter((el) => {
-      if (el % 1 == 0) {
-        return el;
-      }
-    })
+    .filter((el) => el % 1 == 0)
     .sort((a, b) => {
       return a - b;
     });
@@ -49,32 +37,19 @@ function getMedian(...numbers) {
 console.log(getMedian(15, 16, 1, 27, 6.6, 2.1, 11, 25, 3));
 
 function filterEvenNumbers(...numbers) {
-  let oddNumbers = numbers.filter((el) => {
-    if (!(el % 2 == 0)) {
-      return el;
-    }
-  });
+  let oddNumbers = numbers.filter((el) => !(el % 2 == 0));
   return oddNumbers;
 }
 console.log(filterEvenNumbers(3, 5, 6, 8, 2, 9, 1, 3));
 
 function countPositiveNumbers(...numbers) {
-  let count = 0;
-  numbers.forEach((el) => {
-    if (el > 0) {
-      count += 1;
-    }
-  });
+  const count = numbers.filter((e) => e >= 0).length;
   return count;
 }
 console.log(countPositiveNumbers(1, -2, 3, -4, -5, 6, -6, 5, 8, 9, 3.5));
 
 function getDividedByFive(...numbers) {
-  let arrayNumbersDividedByFive = numbers.filter((el) => {
-    if (el % 5 == 0) {
-      return el;
-    }
-  });
+  let arrayNumbersDividedByFive = numbers.filter((el) => el % 5 == 0);
   return arrayNumbersDividedByFive;
 }
 console.log(
