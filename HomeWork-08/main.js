@@ -36,6 +36,7 @@ class Student {
 class BudgetStudent extends Student {
   constructor(university, course, fullName, marks) {
     super(university, course, fullName, marks);
+    this.timerId = setInterval(() => this.getScholarship(), 3000);
   }
   getScholarship() {
     let averageMark = this.getAverageMark();
