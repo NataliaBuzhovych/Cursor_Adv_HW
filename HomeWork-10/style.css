@@ -41,5 +41,4 @@ body{
 .active{
     border: 8px solid rgb(140, 140, 60);
     filter: drop-shadow(0px 0px 0.75rem rgb(188, 210, 98));
-
 }
