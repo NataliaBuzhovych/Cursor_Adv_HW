@@ -5,6 +5,21 @@ const mixed = new Audio("audio/mixed.mp3");
 const drink = new Audio("audio/drink.mp3");
 
 document.body.addEventListener("keydown", function (e) {
+  delActive();
+  let addActive = "key" + e.code.substr(-1);
+  if (document.querySelector(`.${addActive}`)) {
+    document.querySelector(`.${addActive}`).classList.add("active");
+    play(e);
+  }
+});
+
+function delActive() {
+  document
+    .querySelectorAll("div")
+    .forEach((div) => div.classList.remove("active"));
+}
+
+function play(e) {
   if (e.code === "KeyI") {
     ice.play();
   }
@@ -20,15 +35,4 @@ document.body.addEventListener("keydown", function (e) {
   if (e.code === "KeyD") {
     drink.play();
   }
-});
-
-function myFunction(e) {
-  let elems = document.querySelectorAll(".active");
-  [].forEach(
-    (elems) =>
-      function (el) {
-        el.classList.remove("active");
-      }
-  );
-  e.target.className = "active";
 }
