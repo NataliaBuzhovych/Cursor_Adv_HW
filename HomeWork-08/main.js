@@ -7,7 +7,9 @@ class Student {
     this.isDismissed = false;
   }
   getInfo() {
-    console.log(`Студент ${this.course}го ${this.university},${this.fullName}`);
+    return console.log(
+      `Студент ${this.course}го ${this.university},${this.fullName}`
+    );
   }
 
   get mark() {
@@ -61,3 +63,5 @@ const student2 = new BudgetStudent(
   "Оля Петрик",
   [5, 4, 4, 5]
 );
+
+student1.getInfo();
