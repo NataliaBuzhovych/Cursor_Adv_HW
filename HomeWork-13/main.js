@@ -24,6 +24,8 @@ function* newFontGenerator(font) {
 }
 const fontGenerator = newFontGenerator(14);
 fontGenerator.next();
+// console.log(fontGenerator.next("up").value);
+// console.log(fontGenerator.next("up").value);
 
 up.addEventListener("click", () => {
   text.style.fontSize = `${fontGenerator.next("up").value}px`;
