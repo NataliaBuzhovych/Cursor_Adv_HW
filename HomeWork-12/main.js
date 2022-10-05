@@ -2,6 +2,7 @@ const btn1Planets = document.querySelector(".one");
 const btn2Characters = document.querySelector(".two");
 let numFilm = document.querySelector(".input");
 let linkALLPlanets = "https://swapi.dev/api/planets/";
+let card = document.getElementById("card");
 
 async function getInfoCharacters() {
   try {
@@ -56,7 +57,7 @@ async function getInfoPlanets() {
 function namePlanets(arr) {
   document.querySelector("#card").innerHTML = "";
   arr.forEach((el) => {
-    createDiv("planet").innerHTML = el.name;
+    createDiv("planet").innerHTML = "Plamet name: " + el.name;
   });
 }
 function infoAboutCharacter(arr) {
@@ -81,7 +82,7 @@ function infoAboutCharacter(arr) {
 
 function createDiv(titleClass) {
   let div = document.createElement("div");
-  document.querySelector("#card").append(div);
+  card.append(div);
   div.classList.add(titleClass);
   return div;
 }
@@ -93,5 +94,13 @@ function createButton(titleClass, html) {
   return button;
 }
 
-btn2Characters.onclick = getInfoCharacters;
-btn1Planets.onclick = getInfoPlanets;
+btn2Characters.addEventListener("click", function () {
+  getInfoCharacters();
+  card.classList.remove("planets");
+  card.classList.add("characters");
+});
+btn1Planets.addEventListener("click", function () {
+  getInfoPlanets();
+  card.classList.remove("characters");
+  card.classList.add("planets");
+});
