@@ -18,11 +18,13 @@ function* newFontGenerator(іш) {
       font += 1;
     } else if (changes === "down") {
       font -= 1;
-    }
+    } 
+
     changes = yield font;
   }
 }
 const fontGenerator = newFontGenerator(14);
+
 fontGenerator.next();
 // console.log(fontGenerator.next("up").value);
 // console.log(fontGenerator.next("up").value);
