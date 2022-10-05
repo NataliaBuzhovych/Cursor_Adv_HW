@@ -11,7 +11,7 @@ const up = document.getElementById("Up");
 const down = document.getElementById("Down");
 const text = document.getElementById("text");
 
-function* newFontGenerator(font) {
+function* newFontGenerator(іш) {
   let changes = yield;
   while (true) {
     if (changes === "up") {
