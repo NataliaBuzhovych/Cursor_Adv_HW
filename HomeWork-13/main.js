@@ -11,14 +11,14 @@ const up = document.getElementById("Up");
 const down = document.getElementById("Down");
 const text = document.getElementById("text");
 
-function* newFontGenerator(іш) {
+function* newFontGenerator(font) {
   let changes = yield;
   while (true) {
     if (changes === "up") {
       font += 1;
     } else if (changes === "down") {
       font -= 1;
-    } 
+    }
 
     changes = yield font;
   }

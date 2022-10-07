@@ -15,6 +15,7 @@ body {
     margin: 20px auto;
 }
 .btn{
+    cursor: pointer;
     width: 100px;
     font-size: 20px;
     color: aliceblue;
