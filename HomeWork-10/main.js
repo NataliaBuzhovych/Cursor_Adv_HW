@@ -12,6 +12,13 @@ document.body.addEventListener("keydown", function (e) {
     play(e);
   }
 });
+document.querySelector(".container").addEventListener("click", function (e) {
+  delActive();
+  if (e.target.classList.contains("key")) {
+    e.target.classList.add("active");
+    play(e);
+  }
+});
 
 function delActive() {
   document
@@ -20,19 +27,19 @@ function delActive() {
 }
 
 function play(e) {
-  if (e.code === "KeyI") {
+  if (e.code === "KeyI" || e.target.classList.contains("keyI")) {
     ice.play();
   }
-  if (e.code === "KeyP") {
+  if (e.code === "KeyP" || e.target.classList.contains("keyP")) {
     pour.play();
   }
-  if (e.code === "KeyO") {
+  if (e.code === "KeyO" || e.target.classList.contains("keyO")) {
     opened.play();
   }
-  if (e.code === "KeyM") {
+  if (e.code === "KeyM" || e.target.classList.contains("keyM")) {
     mixed.play();
   }
-  if (e.code === "KeyD") {
+  if (e.code === "KeyD" || e.target.classList.contains("keyD")) {
     drink.play();
   }
 }
