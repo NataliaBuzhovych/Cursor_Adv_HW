@@ -13,6 +13,19 @@ function getModa(...numbers) {
   arrayInteger.forEach((el) => {
     counts[el] = (counts[el] || 0) + 1;
   });
+
+  let maxValue = 0;
+  let maxKey = "";
+
+  for (let key in counts) {
+    const value = counts[key];
+    if (value >= maxValue && Number(key)) {
+      maxValue = value;
+      maxKey = key;
+    }
+  }
+
+  return maxKey;
   return counts;
 }
 console.log(getModa(1, 5, 6, 4, 5, 6, 7, 5));
